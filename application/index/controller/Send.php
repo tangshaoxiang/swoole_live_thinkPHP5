@@ -16,8 +16,7 @@ class Send
             // status 0 1  message data
             return Util::show(config('code.error'), 'error');
         }
-        echo 333333;
-        return 11111;
+
         //tood
         // 生成一个随机数
         $code = rand(1000, 9999);
@@ -29,9 +28,9 @@ class Send
                 'code' => $code,
             ]
         ];
-        return $taskData;
+
 //        $_POST['http_server']->task();
-        return Util::show(config('code.success'), 'ok');
+        echo Util::show(config('code.success'), 'ok');
 //        try {
 //            $response = Sms::sendSms($phoneNum,$code);
 //        }catch (\Exception $e) {
