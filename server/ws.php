@@ -51,8 +51,9 @@ class Ws {
         // 定义应用目录
         define('APP_PATH', __DIR__ . '/../../../application/');
         // 加载框架里面的文件
-        //require __DIR__ . '/../thinkphp/base.php';
-        require __DIR__ . '/../../../thinkphp/start.php';
+        require __DIR__ . '/../thinkphp/base.php';   //swoole_http协议真正去执行的时候是在request中，
+        //所有不加载start.php,加载base.php,不去执行start.php中的执行应用并响应,应该放到request中执行
+//        require __DIR__ . '/../../../thinkphp/start.php';
     }
 
     /**
