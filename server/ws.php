@@ -5,6 +5,7 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
+use \app\common\lib\redis\Predis;
 class Ws {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
@@ -158,7 +159,7 @@ class Ws {
      */
     public function onOpen($ws, $request) {
         // fd redis [1]
-        app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
+        Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
@@ -179,7 +180,7 @@ class Ws {
      */
     public function onClose($ws, $fd) {
         // fd del
-        \app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
+        Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
         echo "clientid:{$fd}\n";
     }
 
