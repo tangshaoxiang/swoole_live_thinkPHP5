@@ -29,8 +29,8 @@ class Send
             ]
         ];
 
-//        $_POST['http_server']->task();
-        echo Util::show(config('code.success'), 'ok');
+        $_POST['http_server']->task();
+        return Util::show(config('code.success'), 'ok');
 //        try {
 //            $response = Sms::sendSms($phoneNum,$code);
 //        }catch (\Exception $e) {
