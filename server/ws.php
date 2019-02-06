@@ -159,7 +159,7 @@ class Ws {
      */
     public function onOpen($ws, $request) {
         // fd redis [1]
-        Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
+        app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
@@ -180,7 +180,7 @@ class Ws {
      */
     public function onClose($ws, $fd) {
         // fd del
-        Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
+        app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
         echo "clientid:{$fd}\n";
     }
 
