@@ -96,7 +96,7 @@
 
 			    var phone_num = $(" input[ name='phone_num' ] ").val()
 			  alert(phone_num);
-				url = "http://106.14.14.231:8811?s=index/send/index&phone_num="+phone_num;
+				url = "http://www.darian.xin:8811?s=index/send/index&phone_num="+phone_num;
 				$(this).html('已发送').attr('disabled', true);
 				// $.post()
 				$.get(url, function (data) {
@@ -117,7 +117,7 @@
 				event.preventDefault();
 				var formData = $('form').serialize();
 				alert(formData);
-                url = "http://106.14.14.231:8811?s=index/login/index&"+formData;
+                url = "http://www.darian.xin:8811?s=index/login/index&"+formData;
 				// TODO: 请求后台接口跳转界面，前端跳转或者后台跳
 				$.get(url, function (data) {
 				    console.log('get成功');
