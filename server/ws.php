@@ -20,7 +20,7 @@ class Ws {
         $this->ws->set(
             [
                 'enable_static_handler' => true,
-                'document_root' => "/home/work/hdtocs/swoole_mooc/thinkphp/public/static",
+                'document_root' => "/home/wwwroot/www.darian.xin/swoole_live_thinkPHP5/public/static",
                 'worker_num' => 4,
                 'task_worker_num' => 4,
             ]
@@ -114,7 +114,7 @@ class Ws {
         }
 
         $res = ob_get_contents();
-//        ob_end_clean();
+        ob_end_clean();
         $response->end($res);
     }
 
