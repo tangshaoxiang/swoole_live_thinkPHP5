@@ -5,7 +5,7 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
-use \app\common\lib\redis\Predis;
+
 class Ws {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
