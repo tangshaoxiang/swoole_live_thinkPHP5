@@ -39,7 +39,7 @@ class Http {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
-        \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
+        \application\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
