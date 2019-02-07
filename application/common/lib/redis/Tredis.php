@@ -5,7 +5,7 @@
  * Date: 2019/2/8
  * Time: 0:54
  */
-namespace app\common\lib\redis;
+namespace application\common\lib\redis;
 class  Tredis {
     public $redis = "";
     /**
