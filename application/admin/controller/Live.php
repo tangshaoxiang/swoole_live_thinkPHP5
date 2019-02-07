@@ -37,7 +37,7 @@ class Live
             'data' => $data
         ];
         $_POST['http_server']->task($taskData);
-        return Util::show(config('code.success'), 'ok');
+        echo Util::show(config('code.success'), 'ok');
 
     }
 

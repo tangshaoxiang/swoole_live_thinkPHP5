@@ -193,8 +193,10 @@
           var formData = $('form').serialize();
           alert(formData)
           // TODO: 请求后台接口跳转界面，前端跳转或者后台跳
-          $.get("http://www.darian.xin:8811?s=admin/live/push&" + formData, function (data) {
+            url = "http://www.darian.xin:8811?s=admin/live/push&"+formData;
+            $.get(url, function (data) {
 
+              console.log(88888);
               console.log(data);
             if (data.status == 1) {
                  alert(data.message);
