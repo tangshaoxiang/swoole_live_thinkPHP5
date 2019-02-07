@@ -6,7 +6,7 @@
  * Time: 上午3:52
  */
 namespace app\common\lib\redis;
-class Predis {
+class Predis{
     public $redis = "";
     /**
      * 定义单例模式的变量
