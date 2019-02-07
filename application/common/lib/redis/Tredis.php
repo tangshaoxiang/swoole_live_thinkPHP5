@@ -6,7 +6,7 @@
  * Time: 0:54
  */
 namespace app\common\lib\redis;
-class Tredis {
+class  Tredis {
     public $redis = "";
     /**
      * 定义单例模式的变量
@@ -15,9 +15,9 @@ class Tredis {
     private static $_instance = null;
 
     public static function getInstance() {
-        if(empty(self::$_instance)) {
+//        if(empty(self::$_instance)) {
             self::$_instance = new self();
-        }
+//        }
         return self::$_instance;
     }
 
