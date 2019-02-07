@@ -6,6 +6,8 @@ class Live
 {
 
     public function push() {
+        echo 1111111;
+        return 5555555555555;
         print_r($_GET);
         if(empty($_GET)) {
             return Util::show(config('code.error'), 'error');
