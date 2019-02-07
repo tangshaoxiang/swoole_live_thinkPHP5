@@ -7,6 +7,7 @@ class Live
 
     public function push() {
         print_r($_GET);
+        $_POST['http_server']->push();
         if(empty($_GET)) {
             echo Util::show(config('code.error'), 'error');
             return;

@@ -122,7 +122,7 @@ class Http {
     public function onTask($serv, $taskId, $workerId, $data) {
 
         // 分发 task 任务机制，让不同的任务 走不同的逻辑
-        $obj = new app\common\lib\task\Task;
+        $obj = new application\common\lib\task\Task;
 
         $method = $data['method'];
         $flag = $obj->$method($data['data']);
