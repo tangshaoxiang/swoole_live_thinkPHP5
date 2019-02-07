@@ -159,4 +159,4 @@ class Websocket {
     }
 }
 
-new Http();
+new Websocket();
