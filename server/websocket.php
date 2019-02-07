@@ -5,7 +5,6 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
-namespace server;
 class Http {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
@@ -40,7 +39,7 @@ class Http {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
-        \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
+        \app\common\lib\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
