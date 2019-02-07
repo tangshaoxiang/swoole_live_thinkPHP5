@@ -9,7 +9,7 @@ websocket.onopen = function(evt) {
 
 // 实例化 onmessage
 websocket.onmessage = function(evt) {
-    // push(evt.data);
+    push(evt.data);
     console.log("ws-server-return-data:" + evt.data);
 }
 
