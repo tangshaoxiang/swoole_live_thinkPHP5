@@ -11,7 +11,7 @@ class Http {
 
     public $http = null;
     public function __construct() {
-        $this->http = new swoole_http_server(self::HOST, self::PORT);
+        $this->http = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->http->set(
             [
@@ -22,6 +22,8 @@ class Http {
             ]
         );
 
+        $this->ws->on("open", [$this, 'onOpen']);
+        $this->ws->on("message", [$this, 'onMessage']);
         $this->http->on("workerstart", [$this, 'onWorkerStart']);
         $this->http->on("request", [$this, 'onRequest']);
         $this->http->on("task", [$this, 'onTask']);
@@ -29,6 +31,26 @@ class Http {
         $this->http->on("close", [$this, 'onClose']);
 
         $this->http->start();
+    }
+
+
+    /**
+     * onOpen
+     */
+    public function onOpen($http, $request) {
+        // fd redis [1]
+//        app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
+        var_dump($request->fd);
+    }
+
+    /**
+     * 监听ws消息事件
+     * @param $ws
+     * @param $frame
+     */
+    public function onMessage($http, $frame) {
+        echo "ser-push-message:{$frame->data}\n";
+        $http->push($frame->fd, "server-push:".date("Y-m-d H:i:s"));
     }
 
     /**
