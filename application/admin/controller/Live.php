@@ -7,7 +7,8 @@ class Live
 
     public function push() {
         print_r($_GET);
-        $_POST['http_server']->push();
+        $_POST['http_server']->push(7,"hellow_darian");
+        return;
         if(empty($_GET)) {
             echo Util::show(config('code.error'), 'error');
             return;
