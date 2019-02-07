@@ -22,8 +22,8 @@ class Http {
             ]
         );
 
-        $this->ws->on("open", [$this, 'onOpen']);
-        $this->ws->on("message", [$this, 'onMessage']);
+        $this->http->on("open", [$this, 'onOpen']);
+        $this->http->on("message", [$this, 'onMessage']);
         $this->http->on("workerstart", [$this, 'onWorkerStart']);
         $this->http->on("request", [$this, 'onRequest']);
         $this->http->on("task", [$this, 'onTask']);
