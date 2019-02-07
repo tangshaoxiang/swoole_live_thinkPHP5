@@ -101,10 +101,10 @@
         auto: true,
 
         // swf文件路径
-        swf:  'http://www.darian.shop:8811/webuploader/Uploader.swf',
+        swf:  'http://www.darian.xin:8811/webuploader/Uploader.swf',
 
         // 文件接收服务端。
-        server: 'http://www.darian.shop:8811/?s=admin/image/index',
+        server: 'http://www.darian.xin:8811/?s=admin/image/index',
 
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -192,7 +192,7 @@
           event.preventDefault();
           var formData = $('form').serialize();
           // TODO: 请求后台接口跳转界面，前端跳转或者后台跳
-          $.get("http://www.darian.shop:8811?s=admin/live/push&" + formData, function (data) {
+          $.get("http://www.darian.xin:8811?s=admin/live/push&" + formData, function (data) {
 
               console.log(data);
             if (data.status == 1) {
