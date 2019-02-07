@@ -191,6 +191,7 @@
         $submitBtn.click(function (event) {
           event.preventDefault();
           var formData = $('form').serialize();
+          alert(formData)
           // TODO: 请求后台接口跳转界面，前端跳转或者后台跳
           $.get("http://www.darian.xin:8811?s=admin/live/push&" + formData, function (data) {
 
