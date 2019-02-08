@@ -14,9 +14,9 @@ class Image
             $data = [
                 'image' => config('live.host')."/upload/".$info->getSaveName(),
             ];
-            return Util::show(config('code.success'), 'OK', $data);
+            echo Util::show(config('code.success'), 'OK', $data);
         }else {
-            return Util::show(config('code.error'), 'error');
+            echo Util::show(config('code.error'), 'error');
         }
     }
 
