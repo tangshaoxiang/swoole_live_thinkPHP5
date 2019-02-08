@@ -6,9 +6,9 @@ class Image
 {
 
     public function index() {
-        $file = request()->file('file');
 
-        $info = $file->move('../../../public/static/upload');
+//        $file = request()->file('file');
+        $info = move_uploaded_file($_FILES["file"]["tmp_name"],'../../../public/static/upload');
 
         if($info) {
             $data = [
