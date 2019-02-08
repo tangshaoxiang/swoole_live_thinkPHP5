@@ -6,7 +6,6 @@
  */
 namespace think;
 use app\common\lib\ali\Sms;
-use app\common\lib\redis\Predis;
 use app\common\lib\Redis;
 class Task{
 
