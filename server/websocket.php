@@ -5,7 +5,6 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
-require_once '../application/common/lib/redis/Tredis.php';
 class Websocket {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
@@ -41,6 +40,7 @@ class Websocket {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
+        include_once '../application/common/lib/redis/Tredis.php';
         \app\common\lib\redis\Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
