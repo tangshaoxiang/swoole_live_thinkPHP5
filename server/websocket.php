@@ -40,8 +40,7 @@ class Websocket {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
-        include_once '../application/common/lib/redis/Tredis.php';
-        \app\common\lib\redis\Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
+        vendor\Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
