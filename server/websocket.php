@@ -5,14 +5,13 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
-namespace server;
 class Websocket {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
 
     public $http = null;
     public function __construct() {
-        $this->http = new \swoole_websocket_server(self::HOST, self::PORT);
+        $this->http = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->http->set(
             [
@@ -41,7 +40,7 @@ class Websocket {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
-        \home\wwwroot\www.'.'.darian.'.'.xin\swoole_live_thinkPHP5\server\Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
+        think\Predis::getInstance()->sAdd(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 

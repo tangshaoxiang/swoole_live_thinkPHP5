@@ -23,7 +23,7 @@ class Predis{
 
     private function __construct() {
         $this->redis = new \Redis();
-        $result = $this->redis->connect(config('redis.host'), config('redis.port'), config('redis.timeOut'));
+        $result = $this->redis->connect('127.0.0.1', 6379, 500);
         if($result === false) {
             throw new \Exception('redis connect error');
         }
