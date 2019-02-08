@@ -22,7 +22,7 @@ class Chart
             $_POST['http_server']->push($fd, json_encode($data));
         }
 
-        return Util::show(config('code.success'), 'ok', $data);
+        echo Util::show(config('code.success'), 'ok', $data);
     }
 
 
