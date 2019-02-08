@@ -24,7 +24,7 @@ class Task{
 
         // 如果发送成功 把验证码记录到redis里面
         if($response->Code === "OK") {
-            Predis::getInstance()->set(Redis::smsKey($data['phone']), $data['code'], config('redis.out_time'));
+            Predis::getInstance()->set(Redis::smsKey($data['phone']), $data['code'], 120);
         }else {
             return false;
         }
@@ -37,7 +37,7 @@ class Task{
      * @param $serv swoole server对象
      */
     public function pushLive($data, $serv) {
-        $clients = Predis::getInstance()->sMembers(config("redis.live_game_key"));
+        $clients = Predis::getInstance()->sMembers('live_game_key');
 
         foreach($clients as $fd) {
             $serv->push($fd, json_encode($data));
