@@ -41,7 +41,7 @@ class Websocket {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
-        Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
+        \home\wwwroot\www.darian.xin\swoole_live_thinkPHP5\server\Tredis::getInstance()->test(config('redis.live_game_key'), $request->fd);
         var_dump($request->fd);
     }
 
