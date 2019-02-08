@@ -5,7 +5,7 @@
  * Date: 2019/2/8
  * Time: 0:54
  */
-namespace vendor;
+namespace server;
 class  Tredis {
     public $redis = "";
     /**
