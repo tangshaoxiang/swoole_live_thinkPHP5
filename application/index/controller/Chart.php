@@ -7,10 +7,10 @@ class Chart
     {
         // 登录
         if(empty($_POST['game_id'])) {
-            return Util::show(config('code.error'), 'error');
+            echo  Util::show(config('code.error'), 'error');
         }
         if(empty($_POST['content'])) {
-            return Util::show(config('code.error'), 'error');
+            echo Util::show(config('code.error'), 'error');
         }
 
         $data = [
@@ -18,7 +18,7 @@ class Chart
             'content' => $_POST['content'],
         ];
         //  todo
-        foreach($_POST['http_server']->ports[0]->connections as $fd) {
+        foreach($_POST['http_server']->ports[1]->connections as $fd) {
             $_POST['http_server']->push($fd, json_encode($data));
         }
 

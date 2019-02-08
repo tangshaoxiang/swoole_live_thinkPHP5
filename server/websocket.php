@@ -44,6 +44,7 @@ class Websocket {
      */
     public function onOpen($http, $request) {
         // fd redis [1]
+        print($http);
         think\Predis::getInstance()->sAdd('live_game_key', $request->fd);
         var_dump($request->fd);
     }

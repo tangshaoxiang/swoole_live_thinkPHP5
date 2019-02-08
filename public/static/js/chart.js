@@ -1,4 +1,4 @@
-var wsUrl = "ws://106.14.14.231:8812";
+var wsUrl = "ws://www.darian.xin:8812";
 
 var websocket = new WebSocket(wsUrl);
 
