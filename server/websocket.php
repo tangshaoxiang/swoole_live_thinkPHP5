@@ -5,6 +5,7 @@
  * Date: 18/3/27
  * Time: 上午12:50
  */
+require_once '../application/common/lib/redis/Tredis.php';
 class Websocket {
     CONST HOST = "0.0.0.0";
     CONST PORT = 8811;
