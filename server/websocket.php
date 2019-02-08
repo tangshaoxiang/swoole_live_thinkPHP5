@@ -102,7 +102,7 @@ class Websocket {
         ob_start();
         // 执行应用并响应
         try {
-            think\Container::get('app', [APP_PATH])
+            think\Container::get('app',[defined('APP_PATH') ? APP_PATH : ''])
                 ->run()
                 ->send();
         }catch (\Exception $e) {
