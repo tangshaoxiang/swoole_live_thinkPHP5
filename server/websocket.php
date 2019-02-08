@@ -126,7 +126,7 @@ class Websocket {
         $obj = new think\Task;
 
         $method = $data['method'];
-        $flag = $obj->$method($data['data']);
+        $flag = $obj->$method($data['data'],$serv);
         /*$obj = new app\common\lib\ali\Sms();
         try {
             $response = $obj::sendSms($data['phone'], $data['code']);
@@ -154,7 +154,7 @@ class Websocket {
      * @param $fd
      */
     public function onClose($ws, $fd) {
-                \app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
+                think\Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
 
         echo "clientid:{$fd}\n";
     }
