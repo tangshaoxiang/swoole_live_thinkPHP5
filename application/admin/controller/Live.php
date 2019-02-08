@@ -39,7 +39,10 @@ class Live
             'method' => 'pushLive',
             'data' => $data
         ];
-        $_POST['http_server']->task($taskData);
+//        $_POST['http_server']->task($taskData);
+        foreach($_POST['http_server']->ports[0]->connections as $fd) {
+            $_POST['http_server']->push($fd, json_encode($data));
+        }
         echo Util::show(config('code.success'), 'ok');
 
     }

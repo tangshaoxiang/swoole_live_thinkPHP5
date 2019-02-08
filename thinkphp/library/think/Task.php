@@ -37,14 +37,11 @@ class Task{
      * @param $serv swoole server对象
      */
     public function pushLive($data, $serv) {
-//        $clients = Predis::getInstance()->sMembers('live_game_key');
-//
-//        foreach($clients as $fd) {
-//            $serv->push($fd, json_encode($data));
-//        }
+        $clients = Predis::getInstance()->sMembers('live_game_key');
 
-        foreach($serv->ports[0]->connections as $fd) {
+        foreach($clients as $fd) {
             $serv->push($fd, json_encode($data));
         }
+
     }
 }
