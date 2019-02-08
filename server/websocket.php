@@ -158,7 +158,7 @@ class Websocket {
      * @param $fd
      */
     public function onClose($ws, $fd) {
-                think\Predis::getInstance()->sRem(config('redis.live_game_key'), $fd);
+                think\Predis::getInstance()->sRem('live_game_key', $fd);
 
         echo "clientid:{$fd}\n";
     }
